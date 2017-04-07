@@ -1,30 +1,30 @@
-var GroceryListItem = (props) => {
-  // note curly brace requires a return
+class GroceryListItem extends React.Component {
 
-  var onGroceryItemClick = (event) => {
-    alert('I got clicked')
+  constructor(props) {
+    super(props);
   }
-  return (
-    <ul>
-      <li onClick={onGroceryItemClick}>{props.groceryItems[0]}</li>
-      <li>{props.groceryItems[1]}</li>
-      <li>{props.groceryItems[2]}</li>
-    </ul>
-  )
+
+  render() {
+    return (
+      // TODO Ask why this is {this.props.items}
+      <li>{this.props.items}</li>
+    );
+  }
 }
 
-var Milk = () => (
-  <li>milk</li>
-)
-var Eggs = () => (
-  <li>eggs</li>
-)
+var GroceryList = (props) => (
+  <ul>
+    {props.items.map(item =>
+      <GroceryListItem items={item} />
+    )}
+  </ul>
+);
 
-var GroceryList = () => (
+var App = () => (
   <div>
     <h2>My Grocery List</h2>
-  <GroceryListItem groceryItems={['Eggs', 'Milk', 'Sriracha']} />
+    <GroceryList items={['Eggs', 'Milk', 'Sriracha']} />
   </div>
-)
+);
 
-ReactDOM.render(<GroceryList />, document.getElementById("grocerylist"))
+ReactDOM.render(<App />, document.getElementById("app"))
