@@ -3,6 +3,14 @@ var App = () => (
 );
 ReactDOM.render(<App />, document.getElementById("app"))
 
+var GroceryListItem = (props) => (
+  <ul>
+    <li>{props.groceryItems[0]}</li>
+    <li>{props.groceryItems[1]}</li>
+    <li>{props.groceryItems[2]}</li>
+  </ul>
+)
+
 var Milk = () => (
   <li>milk</li>
 )
@@ -11,10 +19,10 @@ var Eggs = () => (
 )
 
 var GroceryList = () => (
-  <ul>
-    <Milk />
-    <Eggs />
-  </ul>
+  <div>
+    <h2>My Grocery List</h2>
+  <GroceryListItem groceryItems={['Eggs', 'Milk', 'Sriracha']} />
+  </div>
 )
 
 ReactDOM.render(<GroceryList />, document.getElementById("grocerylist"))
