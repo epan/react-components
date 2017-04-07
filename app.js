@@ -1,10 +1,17 @@
-var GroceryListItem = (props) => (
-  <ul>
-    <li>{props.groceryItems[0]}</li>
-    <li>{props.groceryItems[1]}</li>
-    <li>{props.groceryItems[2]}</li>
-  </ul>
-)
+var GroceryListItem = (props) => {
+  // note curly brace requires a return
+
+  var onGroceryItemClick = (event) => {
+    alert('I got clicked')
+  }
+  return (
+    <ul>
+      <li onClick={onGroceryItemClick}>{props.groceryItems[0]}</li>
+      <li>{props.groceryItems[1]}</li>
+      <li>{props.groceryItems[2]}</li>
+    </ul>
+  )
+}
 
 var Milk = () => (
   <li>milk</li>
