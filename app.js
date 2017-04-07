@@ -1,8 +1,3 @@
-var App = () => (
-  <div>Some cliche salutation</div>
-);
-ReactDOM.render(<App />, document.getElementById("app"))
-
 var GroceryListItem = (props) => (
   <ul>
     <li>{props.groceryItems[0]}</li>
